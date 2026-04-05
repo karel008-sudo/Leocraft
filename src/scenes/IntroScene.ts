@@ -1,16 +1,18 @@
 import Phaser from 'phaser';
-import { SCENES, GAME_WIDTH, GAME_HEIGHT } from '../config/constants';
+import { SCENES, GAME_WIDTH, GAME_HEIGHT, COLORS } from '../config/constants';
 
 /**
- * IntroScene – animated splash screen shown once on startup.
+ * IntroScene – premium animated splash screen shown once on startup.
  *
  * Sequence:
- *  0 ms   – dark starfield background appears instantly
- *  0 ms   – 🦁 lion scales in with bounce
- *  700 ms – "LEOCRAFT" title rises into position
- *  1 000 ms – subtitle fades in
- *  1 300 ms – sparkle stars orbit the title
- *  2 900 ms – camera fades to black → MenuScene
+ *  0 ms    – deep indigo gradient background + nebula glows + starfield
+ *  0 ms    – 🦁 lion scales in with Back.easeOut bounce
+ *  700 ms  – "LEOCRAFT" title rises from below with Back.easeOut
+ *  1 050 ms – subtitle fades in
+ *  1 300 ms – 10 sparkle stars burst out in orbit at 140px radius (staggered)
+ *  1 100 ms – lion idle bob begins (±10px, Sine)
+ *  3 500 ms – camera fades to black → MenuScene
+ *  Tap anywhere → skip immediately to MENU
  */
 export class IntroScene extends Phaser.Scene {
   constructor() {
@@ -21,155 +23,238 @@ export class IntroScene extends Phaser.Scene {
     const cx = GAME_WIDTH  / 2;
     const cy = GAME_HEIGHT / 2;
 
-    // ── Starfield background ───────────────────────────────────────────
+    // ── Deep indigo gradient background ──────────────────────────────────
+    // Simulated via layered horizontal strips (top: 0x1B1F3B → bottom: 0x0D0F1E)
     const bg = this.add.graphics();
-    bg.fillStyle(0x1a1a2e).fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-    // Subtle upper glow
-    bg.fillStyle(0x2d2d5e, 0.4).fillRect(0, 0, GAME_WIDTH, cy);
-
-    // Scattered background stars
-    for (let i = 0; i < 50; i++) {
-      const sx = Phaser.Math.Between(10, GAME_WIDTH  - 10);
-      const sy = Phaser.Math.Between(10, GAME_HEIGHT - 10);
-      const sr = 1 + Math.random() * 2;
-      const sa = 0.25 + Math.random() * 0.55;
-      bg.fillStyle(0xffffff, sa).fillCircle(sx, sy, sr);
+    const stripes = 24;
+    for (let i = 0; i < stripes; i++) {
+      const t   = i / (stripes - 1);
+      const r   = Math.round(Phaser.Math.Linear(0x1B, 0x0D, t));
+      const g   = Math.round(Phaser.Math.Linear(0x1F, 0x0F, t));
+      const b   = Math.round(Phaser.Math.Linear(0x3B, 0x1E, t));
+      const col = (r << 16) | (g << 8) | b;
+      const sy  = (i / stripes) * GAME_HEIGHT;
+      const sh  = Math.ceil(GAME_HEIGHT / stripes) + 1;
+      bg.fillStyle(col, 1).fillRect(0, sy, GAME_WIDTH, sh);
     }
 
-    // ── Lion mascot ───────────────────────────────────────────────────
+    // ── Nebula glow blobs (large semi-transparent ellipses) ───────────────
+    const nebula = this.add.graphics();
+    // Purple blob – upper-left quadrant
+    nebula.fillStyle(0x6A0DAD, 0.07).fillEllipse(cx * 0.4, cy * 0.55, 340, 260);
+    // Teal blob – right side
+    nebula.fillStyle(0x0AAFA8, 0.06).fillEllipse(cx * 1.65, cy * 0.80, 280, 220);
+    // Warm amber blob – lower-center
+    nebula.fillStyle(0xF39C12, 0.04).fillEllipse(cx, cy * 1.55, 360, 200);
+
+    // ── Rich starfield: varied sizes, brightness, subtle twinkle ─────────
+    const starGfx = this.add.graphics();
+    const starData: Array<{ x: number; y: number; r: number; alpha: number }> = [];
+
+    for (let i = 0; i < 70; i++) {
+      const sx = Phaser.Math.Between(6, GAME_WIDTH  - 6);
+      const sy = Phaser.Math.Between(6, GAME_HEIGHT - 6);
+      const sr = 0.5 + Math.random() * 2.5;          // 0.5–3 px radius
+      const sa = 0.15 + Math.random() * 0.65;
+      starData.push({ x: sx, y: sy, r: sr, alpha: sa });
+      starGfx.fillStyle(0xffffff, sa).fillCircle(sx, sy, sr);
+    }
+
+    // Twinkle a random subset of small stars
+    starData.forEach((s, idx) => {
+      if (s.r < 1.4 && idx % 3 === 0) {
+        // Create an invisible rect we use purely as a tween target for alpha
+        const proxy = this.add.rectangle(s.x, s.y, 1, 1, 0xffffff, 0).setAlpha(s.alpha);
+        this.tweens.add({
+          targets: proxy,
+          alpha: s.alpha * 0.2,
+          duration: 600 + Math.random() * 900,
+          delay:    Math.random() * 1200,
+          ease: 'Sine.easeInOut',
+          yoyo: true,
+          repeat: -1,
+          onUpdate: () => {
+            // Re-draw that star at the tweened alpha
+            starGfx.fillStyle(0xffffff, proxy.alpha).fillCircle(s.x, s.y, s.r);
+          },
+        });
+      }
+    });
+
+    // ── Golden circular glow behind lion ──────────────────────────────────
+    const lionY = cy - 90;
+    const glow  = this.add.graphics();
+    glow.fillStyle(COLORS.GOLD, 0.07).fillCircle(cx, lionY, 110);
+    glow.fillStyle(COLORS.GOLD, 0.04).fillCircle(cx, lionY, 150);
+
+    // ── Lion mascot ───────────────────────────────────────────────────────
     const lion = this.add
-      .text(cx, cy - 90, '🦁', { fontSize: '110px' })
+      .text(cx, lionY, '🦁', { fontSize: '120px' })
       .setOrigin(0.5)
       .setScale(0)
       .setAlpha(0);
 
-    // ── Title ─────────────────────────────────────────────────────────
+    // ── "LEOCRAFT" title ──────────────────────────────────────────────────
+    const titleStartY = cy + 160;
+    const titleEndY   = cy + 100;
     const title = this.add
-      .text(cx, cy + 120, 'LEOCRAFT', {
-        fontSize: '68px',
-        color: '#FFD700',
-        fontStyle: 'bold',
-        stroke: '#9A7000',
-        strokeThickness: 5,
+      .text(cx, titleStartY, 'LEOCRAFT', {
+        fontSize:        '70px',
+        color:           COLORS.TEXT_GOLD,
+        fontStyle:       'bold',
+        stroke:          '#9A6000',
+        strokeThickness: 6,
       })
       .setOrigin(0.5)
       .setAlpha(0);
 
-    // ── Subtitle ──────────────────────────────────────────────────────
+    // ── Subtitle ──────────────────────────────────────────────────────────
     const subtitle = this.add
-      .text(cx, cy + 210, 'Zábava pro nejmenší', {
-        fontSize: '28px',
-        color: '#aaaacc',
+      .text(cx, titleEndY + 62, 'Vzdělávací hra pro nejmenší', {
+        fontSize: '24px',
+        color:    COLORS.TEXT_CREAM,
       })
       .setOrigin(0.5)
       .setAlpha(0);
 
-    // ─────────────────────────────────────────────────────────────────
-    // Animation timeline
-    // ─────────────────────────────────────────────────────────────────
+    // ── Tap-to-skip hint ─────────────────────────────────────────────────
+    const skipHint = this.add
+      .text(cx, GAME_HEIGHT - 36, 'Klepni pro přeskočení', {
+        fontSize: '18px',
+        color:    '#8888AA',
+      })
+      .setOrigin(0.5)
+      .setAlpha(0);
 
-    // Lion bounces in
-    this.tweens.add({
-      targets: lion,
-      scaleX: 1,
-      scaleY: 1,
-      alpha: 1,
-      duration: 550,
-      ease: 'Back.easeOut',
+    // Fade in the skip hint after a short delay
+    this.time.delayedCall(800, () => {
+      this.tweens.add({ targets: skipHint, alpha: 0.55, duration: 500 });
     });
 
-    // Lion slight hop after appearing
-    this.time.delayedCall(600, () => {
+    // ── Skip on tap anywhere ──────────────────────────────────────────────
+    let skipped = false;
+    const skipToMenu = () => {
+      if (skipped) return;
+      skipped = true;
+      this.cameras.main.fadeOut(400, 0, 0, 0);
+      this.cameras.main.once('camerafadeoutcomplete', () => {
+        this.scene.start(SCENES.MENU);
+      });
+    };
+
+    this.input.on('pointerdown', skipToMenu);
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Animation timeline
+    // ─────────────────────────────────────────────────────────────────────
+
+    // Lion bounces in immediately
+    this.tweens.add({
+      targets:  lion,
+      scaleX:   1,
+      scaleY:   1,
+      alpha:    1,
+      duration: 580,
+      ease:     'Back.easeOut',
+    });
+
+    // Lion quick hop after appearing
+    this.time.delayedCall(620, () => {
       this.tweens.add({
-        targets: lion,
-        y: cy - 110,
-        duration: 250,
-        ease: 'Power2',
-        yoyo: true,
+        targets:  lion,
+        y:        lionY - 18,
+        duration: 220,
+        ease:     'Power2.easeOut',
+        yoyo:     true,
       });
     });
 
-    // Title rises up and fades in
+    // Title rises from below with Back.easeOut
     this.time.delayedCall(700, () => {
       this.tweens.add({
-        targets: title,
-        y: cy + 80,
-        alpha: 1,
-        duration: 500,
-        ease: 'Power2.easeOut',
+        targets:  title,
+        y:        titleEndY,
+        alpha:    1,
+        duration: 520,
+        ease:     'Back.easeOut',
       });
     });
 
     // Subtitle fades in
     this.time.delayedCall(1050, () => {
-      this.tweens.add({
-        targets: subtitle,
-        alpha: 1,
-        duration: 400,
-      });
+      this.tweens.add({ targets: subtitle, alpha: 1, duration: 420 });
     });
 
-    // Stars burst around title
+    // Orbit star burst
     this.time.delayedCall(1300, () => {
-      this.spawnOrbitStars(cx, cy + 80);
+      this.spawnOrbitStars(cx, titleEndY);
     });
 
-    // Gentle idle bob on lion
+    // Lion idle bob (starts after entry animation settles)
     this.time.delayedCall(1100, () => {
       this.tweens.add({
-        targets: lion,
-        y: cy - 100,
-        duration: 900,
-        ease: 'Sine.easeInOut',
-        yoyo: true,
-        repeat: -1,
+        targets:  lion,
+        y:        lionY + 10,
+        duration: 1050,
+        ease:     'Sine.easeInOut',
+        yoyo:     true,
+        repeat:   -1,
+      });
+      // Also gently pulse the glow
+      this.tweens.add({
+        targets:  glow,
+        alpha:    0.5,
+        duration: 1050,
+        ease:     'Sine.easeInOut',
+        yoyo:     true,
+        repeat:   -1,
       });
     });
 
-    // Fade out → MenuScene
-    this.time.delayedCall(2900, () => {
-      this.cameras.main.fadeOut(600, 0, 0, 0);
-      this.cameras.main.once('camerafadeoutcomplete', () => {
-        this.scene.start(SCENES.MENU);
-      });
+    // Auto-advance to MenuScene after ~3.5 s total
+    this.time.delayedCall(3500, () => {
+      skipToMenu();
     });
   }
 
-  // ──────────────────────────────────────────────────────────────────────
+  // ──────────────────────────────────────────────────────────────────────────
+  /** Spawn 10 sparkle-stars in orbit around the title, staggered. */
   private spawnOrbitStars(cx: number, cy: number): void {
-    const glyphs = ['✨', '⭐', '🌟', '✨', '⭐', '🌟', '✨', '⭐'];
+    const glyphs = ['✨', '⭐', '🌟', '✨', '⭐', '🌟', '✨', '⭐', '🌟', '✨'];
+    const count  = glyphs.length;
 
     glyphs.forEach((glyph, i) => {
-      const angle = (i / glyphs.length) * Math.PI * 2;
-      const dist  = 130 + Math.random() * 30;
-      const star  = this.add
-        .text(cx + Math.cos(angle) * dist, cy + Math.sin(angle) * dist, glyph, {
-          fontSize: '30px',
-        })
+      const angle  = (i / count) * Math.PI * 2;
+      const radius = 140;
+      const tx     = cx + Math.cos(angle) * radius;
+      const ty     = cy + Math.sin(angle) * radius;
+
+      const star = this.add
+        .text(tx, ty, glyph, { fontSize: '28px' })
         .setOrigin(0.5)
         .setAlpha(0)
         .setScale(0);
 
       this.tweens.add({
-        targets: star,
-        alpha: 1,
-        scaleX: 1,
-        scaleY: 1,
-        duration: 350,
-        delay: i * 70,
-        ease: 'Back.easeOut',
+        targets:  star,
+        alpha:    1,
+        scaleX:   1,
+        scaleY:   1,
+        duration: 360,
+        delay:    i * 80,
+        ease:     'Back.easeOut',
       });
 
-      // Gentle pulse after appearing
-      this.time.delayedCall(350 + i * 70, () => {
+      // Gentle scale pulse after appearing
+      this.time.delayedCall(360 + i * 80 + 50, () => {
         this.tweens.add({
-          targets: star,
-          scaleX: 1.25,
-          scaleY: 1.25,
-          duration: 500,
-          ease: 'Sine.easeInOut',
-          yoyo: true,
-          repeat: -1,
+          targets:  star,
+          scaleX:   1.3,
+          scaleY:   1.3,
+          duration: 540 + Math.random() * 200,
+          ease:     'Sine.easeInOut',
+          yoyo:     true,
+          repeat:   -1,
         });
       });
     });
