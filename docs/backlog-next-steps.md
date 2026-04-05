@@ -1,58 +1,44 @@
-# Backlog – další kroky po první hratelné verzi
+# Backlog – Další kroky
 
-## Priorita 1 – Audio (nejdůležitější pro dětský zážitek)
+## Priorita 1 – Okamžitě hratelné vylepšení
 
-- [ ] Přidat zvuk při správném výběru (vesele, krátce – např. „ping" nebo fanfára)
-- [ ] Přidat zvuk při špatném výběru (neutrálně, jemně – např. „bloop")
-- [ ] Přidat klidnou smyčkovanou hudbu na pozadí
-- [ ] Implementovat globální mute tlačítko (rodiče ocení)
-- [ ] Přidat hlasové popisky zvířat (ideálně „Slon!" po správném klepnutí)
+- [ ] Zvukový feedback pro přechod mezi světy (zvláštní melodie/jingle)
+- [ ] Leo voice clips: "Výborně!", "Zkus to znovu!" (TTS nebo nahrávky)
+- [ ] Ilustrovaná zvířata (PNG sprity místo emoji na kartách)
+- [ ] Ilustrovaný Leo (sprite sheet: idle, happy, thinking)
 
-## Priorita 2 – Vizuální polish
+## Priorita 2 – Herní obsah
 
-- [ ] Nahradit emoji zvířat ilustrovanými sprity (PNG s průhledností)
-- [ ] Nahradit emoji Lea animovanou postavou (idle + happy + shake animace)
-- [ ] Ilustrovaný background místo Phaser Graphics
-- [ ] Animace hvězdiček jako Spine nebo spritesheet místo emoji tweenů
-- [ ] Smooth přechody (slide-in pásu, confetti particle system)
+- [ ] Rozšíření každé kategorie na 15+ objektů
+- [ ] Obtížnostní stupně (rychlost pásu, počet distraktorů)
+- [ ] 4. svět: ZOO nebo ZAHRADA nebo ŠKOLA (snadno přidatelný přes WorldConfig)
+- [ ] Lokalizace do angličtiny (i18n systém)
 
-## Priorita 3 – Herní mechaniky
+## Priorita 3 – Vizuální polish
 
-- [ ] Obtížnostní stupně (rychlost pásu, počet karet, podobná zvířata)
-- [ ] Jednoduchý systém odměn (nálepky, sbírání zvířat)
-- [ ] „Výborně!" animace od Lea s hvězdami
-- [ ] Zvukové tipy pokud dítě 5 s neklikne (Leo na bublinu ukáže)
-- [ ] Různé herní režimy (barvy, číslice, tvary)
+- [ ] Phaser Particles emitter (místo emoji konfety)
+- [ ] Leo idle animace na platform (dýchání, mrkání)
+- [ ] Microanimace pro každý svět (vlající plachty v cirkuse, blikající cena v supermarketu, houpající se lampa doma)
+- [ ] Přechod pomocí "wipe" (škrabnutí odhalující nové prostředí)
 
-## Priorita 4 – Obsah
+## Priorita 4 – Technická infrastruktura
 
-- [ ] Rozšíření na 15+ zvířat
-- [ ] Domácí zvířata jako druhá kategorie
-- [ ] Lokalizace do dalších jazyků (EN, DE, SK)
-- [ ] Přidání jmen zvířat zvukem (TTS nebo nahrávka)
-
-## Priorita 5 – Technická infrastruktura
-
-- [ ] Service Worker (offline podpora) přes `vite-plugin-pwa`
-- [ ] PWA ikony (192 px, 512 px) z finálního loga
-- [ ] Ukládání skóre/progress do localStorage
+- [ ] Sprite Atlas (TextureAtlas) pro výkon
+- [ ] localStorage pro uložení progress (děti se mohou vracet)
 - [ ] Capacitor wrapper pro Google Play
-- [ ] Analytics (anonymní, bez PII – kolik kol, průměrná přesnost)
-
-## Priorita 6 – QA
-
-- [ ] Testování na reálných zařízeních (Android low-end + iPad)
-- [ ] Testování s dětmi 3–5 let
-- [ ] Lighthouse audit (performance, PWA score)
-- [ ] Accessibility audit (kontrast, touch targets)
+- [ ] Service Worker (offline support)
+- [ ] PWA ikony (192px, 512px)
 
 ---
 
 ## Doporučený příští prompt
 
-Jakmile bude hotové audio nebo finální assety, použij:
-
-> "Pokračuji v Leocraft. Aktuální stav: `src/scenes/GameScene.ts` má placeholder emoji zvířata a žádné zvuky.
-> Zadání: (1) Přidej audio feedback – správně: veselý ding, špatně: jemný bloop. Použij WebAudioAPI
-> přes Phaser.Sound nebo procedurálně vygenerované tóny bez externích souborů. (2) Přidej
-> mute tlačítko do top baru. Zachovej existující architekturu, nepřepisuj hotový kód."
+```
+Pokračuji v Leocraft. Momentálně máme tři světy (cirkus/supermarket/domov) s emoji objekty.
+Chci přidat ilustrovaná zvířata jako PNG sprity:
+1. Jak strukturovat assets v public/assets/sprites/circus/ ?
+2. Jak načíst sprity v LoadScene.preload() ?
+3. Jak nahradit emoji v createCard() a buildBubble() za Phaser Image objekty ?
+4. Jak zachovat správné scalování a zarovnání ?
+Zachovej existující architekturu, jen ukáž konkrétní úpravy v LoadScene a GameScene.
+```

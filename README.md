@@ -1,9 +1,11 @@
 # Leocraft
 
-Mobilní vzdělávací hra pro děti od 3 let – pomoz lvovi Leovi najít správné zvíře na pokladním pásu!  
-Stack: **Phaser 3 · TypeScript · Vite** — web-first, PWA-ready, Capacitor-later.
+Mobilní vzdělávací hra pro děti od 3 let.  
+Stack: **Phaser 3 · TypeScript · Vite** — web-first, PWA-ready.
 
-> **Stav:** v0.2.0 – první hratelná verze (intro animace, menu, herní scéna s pásem a zvířaty)
+> **v0.4.0 – Tři světy:** Cirkus 🎪 → Supermarket 🛒 → Rodinný dům 🏠
+
+Leo the Lion provází dítě třemi světy. V každém světě hráč klikne na správný objekt na pohyblivém pásu – ten, který Leo ukazuje v komiksové bublině. Po 5 správných odpovědích se hra efektně přesune do dalšího světa.
 
 ---
 
