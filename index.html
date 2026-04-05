@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="description" content="Leocraft – zábavná vzdělávací hra pro nejmenší děti" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Leocraft</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background: #1a1a2e;
+        overflow: hidden;
+        /* Prevent pull-to-refresh and text selection on mobile */
+        overscroll-behavior: none;
+        -webkit-user-select: none;
+        user-select: none;
+        touch-action: none;
+      }
+
+      #game-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Portrait-only guidance overlay — hidden by default */
+      #rotate-notice {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #1a1a2e;
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 24px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        z-index: 999;
+      }
+
+      /* Show rotate notice in landscape on small screens */
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        #rotate-notice {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="rotate-notice">
+      <div style="font-size: 48px; margin-bottom: 16px">📱</div>
+      <div>Otoč telefon do výšky</div>
+    </div>
+    <div id="game-container"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
