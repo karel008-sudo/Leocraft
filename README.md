@@ -1,7 +1,9 @@
 # Leocraft
 
-Mobilní vzdělávací hra pro děti od 3 let.  
+Mobilní vzdělávací hra pro děti od 3 let – pomoz lvovi Leovi najít správné zvíře na pokladním pásu!  
 Stack: **Phaser 3 · TypeScript · Vite** — web-first, PWA-ready, Capacitor-later.
+
+> **Stav:** v0.2.0 – první hratelná verze (intro animace, menu, herní scéna s pásem a zvířaty)
 
 ---
 
