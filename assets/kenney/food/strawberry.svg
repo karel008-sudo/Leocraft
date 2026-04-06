@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Strawberry body (heart/triangle shape pointing down) -->
+  <path d="M 64 112 Q 12 72 16 40 Q 20 16 40 16 Q 54 16 64 32 Q 74 16 88 16 Q 108 16 112 40 Q 116 72 64 112 Z" fill="#DD2020"/>
+  <!-- Seed dots -->
+  <ellipse cx="44" cy="48" rx="4" ry="3" fill="#FFD0C0" opacity="0.90"/>
+  <ellipse cx="62" cy="44" rx="4" ry="3" fill="#FFD0C0" opacity="0.90"/>
+  <ellipse cx="80" cy="48" rx="4" ry="3" fill="#FFD0C0" opacity="0.90"/>
+  <ellipse cx="38" cy="66" rx="4" ry="3" fill="#FFD0C0" opacity="0.90"/>
+  <ellipse cx="56" cy="64" rx="4" ry="3" fill="#FFD0C0" opacity="0.90"/>
+  <ellipse cx="74" cy="62" rx="4" ry="3" fill="#FFD0C0" opacity="0.90"/>
+  <ellipse cx="88" cy="66" rx="4" ry="3" fill="#FFD0C0" opacity="0.90"/>
+  <ellipse cx="48" cy="84" rx="4" ry="3" fill="#FFD0C0" opacity="0.90"/>
+  <ellipse cx="66" cy="82" rx="4" ry="3" fill="#FFD0C0" opacity="0.90"/>
+  <ellipse cx="82" cy="82" rx="4" ry="3" fill="#FFD0C0" opacity="0.90"/>
+  <!-- Shine -->
+  <ellipse cx="44" cy="36" rx="14" ry="10" fill="#FF5050" opacity="0.50"/>
+  <!-- Green sepals on top -->
+  <path d="M 64 20 Q 46 2 38 14" stroke="#30A030" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M 64 20 Q 52 4 64 8" stroke="#30A030" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M 64 20 Q 70 2 76 12" stroke="#30A030" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M 64 20 Q 80 6 88 16" stroke="#30A030" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <circle cx="64" cy="20" r="8" fill="#40B040"/>
+</svg>

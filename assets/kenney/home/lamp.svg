@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Base (wide, stable) -->
+  <ellipse cx="64" cy="116" rx="44" ry="10" fill="#8B6040"/>
+  <rect x="46" y="102" width="36" height="18" rx="8" fill="#9A7050"/>
+  <!-- Pole -->
+  <rect x="58" y="62" width="8" height="44" rx="4" fill="#A07848"/>
+  <!-- Lampshade (large, clear) -->
+  <path d="M 20 62 Q 28 24 64 18 Q 100 24 108 62 Z" fill="#E8A030"/>
+  <!-- Shade inner -->
+  <path d="M 28 62 Q 36 28 64 22 Q 92 28 100 62 Z" fill="#C07820"/>
+  <!-- BRIGHT GLOW (key lamp feature - shows it's on) -->
+  <ellipse cx="64" cy="62" rx="30" ry="16" fill="#FFE880" opacity="0.85"/>
+  <!-- Glow spreading down -->
+  <ellipse cx="64" cy="90" rx="38" ry="22" fill="#FFE080" opacity="0.25"/>
+  <!-- Shade rim highlight -->
+  <rect x="20" y="56" width="88" height="8" rx="4" fill="#C07010"/>
+  <!-- Top cap -->
+  <ellipse cx="64" cy="18" rx="26" ry="7" fill="#C08020"/>
+</svg>

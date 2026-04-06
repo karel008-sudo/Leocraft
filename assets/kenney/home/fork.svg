@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Handle (big and clear) -->
+  <rect x="50" y="76" width="28" height="44" rx="14" fill="#C0C8D8"/>
+  <rect x="54" y="78" width="12" height="40" rx="6" fill="#D8E0F0" opacity="0.70"/>
+  <!-- Shaft -->
+  <rect x="56" y="48" width="16" height="32" rx="4" fill="#B8C0D0"/>
+  <!-- THREE BIG TINES -->
+  <rect x="42" y="14" width="12" height="40" rx="6" fill="#C8D0E0"/>
+  <rect x="58" y="10" width="12" height="44" rx="6" fill="#D0D8E8"/>
+  <rect x="74" y="14" width="12" height="40" rx="6" fill="#C8D0E0"/>
+  <!-- Connector base -->
+  <rect x="42" y="50" width="44" height="10" rx="5" fill="#B0B8C8"/>
+  <!-- Shine on handle -->
+  <rect x="54" y="82" width="5" height="34" rx="2.5" fill="#FFFFFF" opacity="0.35"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Long green oval - immediately recognizable cucumber shape -->
+  <ellipse cx="64" cy="64" rx="30" ry="54" fill="#4A9030"/>
+  <!-- Lighter center stripe -->
+  <ellipse cx="64" cy="64" rx="18" ry="48" fill="#5AA838"/>
+  <!-- Bumpy surface suggestion -->
+  <circle cx="64" cy="24" r="5" fill="#3A7020"/>
+  <circle cx="58" cy="36" r="4" fill="#3A7020"/>
+  <circle cx="70" cy="48" r="4" fill="#3A7020"/>
+  <circle cx="58" cy="64" r="4" fill="#3A7020"/>
+  <circle cx="70" cy="78" r="4" fill="#3A7020"/>
+  <circle cx="60" cy="92" r="4" fill="#3A7020"/>
+  <!-- Highlight -->
+  <ellipse cx="54" cy="36" rx="8" ry="16" fill="#70C040" opacity="0.50"/>
+  <!-- Stem ends -->
+  <ellipse cx="64" cy="12" rx="14" ry="8" fill="#3A8020"/>
+  <ellipse cx="64" cy="116" rx="14" ry="8" fill="#3A8020"/>
+</svg>

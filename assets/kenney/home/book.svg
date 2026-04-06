@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Book spine (visible side) -->
+  <rect x="14" y="14" width="22" height="100" rx="6" fill="#1A3A8A"/>
+  <!-- Main cover front -->
+  <rect x="30" y="14" width="84" height="100" rx="4" fill="#2A70C8"/>
+  <!-- Cover decoration -->
+  <rect x="38" y="24" width="68" height="16" rx="4" fill="#FFFFFF" opacity="0.25"/>
+  <!-- Big star on cover -->
+  <circle cx="76" cy="68" r="22" fill="#FFD700" opacity="0.95"/>
+  <!-- Author line -->
+  <rect x="42" y="92" width="60" height="8" rx="4" fill="#FFFFFF" opacity="0.20"/>
+  <!-- Pages edge (right side, visible as lines) -->
+  <rect x="108" y="18" width="10" height="96" rx="4" fill="#F5F0E8"/>
+  <line x1="108" y1="36" x2="118" y2="36" stroke="#E0D8C8" stroke-width="1.5"/>
+  <line x1="108" y1="52" x2="118" y2="52" stroke="#E0D8C8" stroke-width="1.5"/>
+  <line x1="108" y1="68" x2="118" y2="68" stroke="#E0D8C8" stroke-width="1.5"/>
+  <line x1="108" y1="84" x2="118" y2="84" stroke="#E0D8C8" stroke-width="1.5"/>
+  <line x1="108" y1="100" x2="118" y2="100" stroke="#E0D8C8" stroke-width="1.5"/>
+  <!-- Spine highlight -->
+  <rect x="16" y="16" width="8" height="96" rx="3" fill="#2A5AB8" opacity="0.50"/>
+</svg>

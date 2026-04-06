@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- CLEAR T-SHIRT SILHOUETTE -->
+  <!-- Left sleeve -->
+  <path d="M 8 28 L 8 72 L 32 72 L 38 44 Z" fill="#4A90D8"/>
+  <!-- Right sleeve -->
+  <path d="M 120 28 L 120 72 L 96 72 L 90 44 Z" fill="#4A90D8"/>
+  <!-- Main body -->
+  <rect x="32" y="40" width="64" height="84" rx="4" fill="#5A9AE8"/>
+  <!-- Collar -->
+  <path d="M 38 40 Q 64 30 90 40 Q 80 22 64 20 Q 48 22 38 40 Z" fill="#3A7AC8"/>
+  <!-- Shirt body highlight -->
+  <rect x="36" y="52" width="24" height="60" rx="4" fill="#78B0F0" opacity="0.35"/>
+  <!-- Collar opening (V or round) -->
+  <path d="M 48 36 Q 64 48 80 36" stroke="#3070B8" stroke-width="2" fill="none"/>
+</svg>

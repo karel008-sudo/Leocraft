@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Stem -->
+  <rect x="52" y="80" width="24" height="40" rx="10" fill="#5A9030"/>
+  <rect x="56" y="82" width="10" height="36" rx="5" fill="#70A840" opacity="0.60"/>
+  <!-- Big green cloud/tree top (most distinctive broccoli feature) -->
+  <circle cx="64" cy="56" r="36" fill="#30882A"/>
+  <circle cx="38" cy="68" r="24" fill="#2A7A24"/>
+  <circle cx="90" cy="68" r="24" fill="#2A7A24"/>
+  <circle cx="44" cy="48" r="20" fill="#38A030"/>
+  <circle cx="84" cy="48" r="20" fill="#38A030"/>
+  <circle cx="64" cy="36" r="22" fill="#40B038"/>
+  <!-- Texture bumps -->
+  <circle cx="52" cy="44" r="8" fill="#48C040"/>
+  <circle cx="76" cy="40" r="8" fill="#48C040"/>
+  <circle cx="64" cy="52" r="10" fill="#50C848"/>
+  <circle cx="40" cy="64" r="7" fill="#38A030"/>
+  <circle cx="88" cy="64" r="7" fill="#38A030"/>
+</svg>

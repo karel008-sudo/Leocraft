@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- WAISTBAND (wide, clear) -->
+  <rect x="10" y="22" width="108" height="24" rx="12" fill="#1A4A8A"/>
+  <rect x="10" y="22" width="108" height="14" rx="7" fill="#2A5A9A" opacity="0.80"/>
+  <!-- Main body -->
+  <rect x="10" y="42" width="108" height="50" rx="4" fill="#2A70C8"/>
+  <!-- Left leg -->
+  <path d="M 10 92 Q 10 118 30 120 L 62 120 L 62 92 Z" fill="#2A70C8"/>
+  <!-- Right leg -->
+  <path d="M 118 92 Q 118 118 98 120 L 66 120 L 66 92 Z" fill="#2A70C8"/>
+  <!-- Center divider line -->
+  <rect x="60" y="76" width="8" height="44" rx="4" fill="#1A5AAA"/>
+  <!-- Highlight on body -->
+  <rect x="14" y="46" width="36" height="44" rx="4" fill="#5090E8" opacity="0.30"/>
+  <!-- Waistband label area -->
+  <rect x="30" y="28" width="68" height="6" rx="3" fill="#FFFFFF" opacity="0.25"/>
+</svg>

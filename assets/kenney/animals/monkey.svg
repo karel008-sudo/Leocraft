@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Big round ears -->
+  <circle cx="18" cy="52" r="22" fill="#A0714A"/>
+  <circle cx="110" cy="52" r="22" fill="#A0714A"/>
+  <circle cx="18" cy="52" r="14" fill="#C89870"/>
+  <circle cx="110" cy="52" r="14" fill="#C89870"/>
+  <!-- Body/head -->
+  <ellipse cx="64" cy="60" rx="46" ry="50" fill="#A0714A"/>
+  <!-- Facial area (lighter) -->
+  <ellipse cx="64" cy="68" rx="30" ry="32" fill="#D4A878"/>
+  <!-- Forehead shine -->
+  <ellipse cx="50" cy="42" rx="14" ry="8" fill="#B8845A" opacity="0.5"/>
+  <!-- Eyes (big and friendly) -->
+  <circle cx="48" cy="52" r="11" fill="white"/>
+  <circle cx="80" cy="52" r="11" fill="white"/>
+  <circle cx="50" cy="53" r="6.5" fill="#4A2800"/>
+  <circle cx="82" cy="53" r="6.5" fill="#4A2800"/>
+  <circle cx="52" cy="51" r="2.5" fill="white"/>
+  <circle cx="84" cy="51" r="2.5" fill="white"/>
+  <!-- Nose -->
+  <ellipse cx="64" cy="66" rx="8" ry="5" fill="#8B5A28"/>
+  <ellipse cx="60" cy="67" rx="2.5" ry="2" fill="#5A3010"/>
+  <ellipse cx="68" cy="67" rx="2.5" ry="2" fill="#5A3010"/>
+  <!-- Big smile -->
+  <path d="M 46 76 Q 64 92 82 76" stroke="#8B5A28" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+</svg>

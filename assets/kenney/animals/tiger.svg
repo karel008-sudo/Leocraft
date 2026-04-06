@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Round ears -->
+  <circle cx="20" cy="24" r="20" fill="#E07820"/>
+  <circle cx="108" cy="24" r="20" fill="#E07820"/>
+  <circle cx="20" cy="24" r="12" fill="#222"/>
+  <circle cx="108" cy="24" r="12" fill="#222"/>
+  <circle cx="20" cy="24" r="6" fill="#E07820"/>
+  <circle cx="108" cy="24" r="6" fill="#E07820"/>
+  <!-- Big round head -->
+  <circle cx="64" cy="66" r="56" fill="#E07820"/>
+  <!-- Face lighter area -->
+  <circle cx="64" cy="68" r="44" fill="#F09030"/>
+  <!-- Forehead stripe (key tiger feature) -->
+  <path d="M 48 14 Q 64 8 80 14 L 76 36 Q 64 30 52 36 Z" fill="#222222"/>
+  <!-- Eye stripes -->
+  <path d="M 22 46 L 40 54" stroke="#222" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 106 46 L 88 54" stroke="#222" stroke-width="6" stroke-linecap="round"/>
+  <!-- Cheek stripes -->
+  <path d="M 14 64 L 36 70" stroke="#222" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 114 64 L 92 70" stroke="#222" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 18 78 L 36 82" stroke="#222" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 110 78 L 92 82" stroke="#222" stroke-width="5" stroke-linecap="round"/>
+  <!-- Muzzle area -->
+  <ellipse cx="64" cy="80" rx="26" ry="18" fill="#FFD080"/>
+  <!-- Eyes -->
+  <circle cx="46" cy="58" r="11" fill="#88DD22"/>
+  <circle cx="82" cy="58" r="11" fill="#88DD22"/>
+  <ellipse cx="46" cy="59" rx="4" ry="7" fill="#222"/>
+  <ellipse cx="82" cy="59" rx="4" ry="7" fill="#222"/>
+  <circle cx="47" cy="56" r="2.5" fill="white"/>
+  <circle cx="83" cy="56" r="2.5" fill="white"/>
+  <!-- Nose -->
+  <ellipse cx="64" cy="74" rx="7" ry="5" fill="#CC4440"/>
+  <!-- Whiskers -->
+  <line x1="34" y1="82" x2="14" y2="78" stroke="#FFFFFF" stroke-width="2.5"/>
+  <line x1="34" y1="86" x2="14" y2="88" stroke="#FFFFFF" stroke-width="2.5"/>
+  <line x1="34" y1="90" x2="14" y2="96" stroke="#FFFFFF" stroke-width="2.5"/>
+  <line x1="94" y1="82" x2="114" y2="78" stroke="#FFFFFF" stroke-width="2.5"/>
+  <line x1="94" y1="86" x2="114" y2="88" stroke="#FFFFFF" stroke-width="2.5"/>
+  <line x1="94" y1="90" x2="114" y2="96" stroke="#FFFFFF" stroke-width="2.5"/>
+  <!-- Smile -->
+  <path d="M 50 90 Q 64 100 78 90" stroke="#AA3030" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

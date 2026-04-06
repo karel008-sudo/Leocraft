@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Green husk leaves (sides) -->
+  <path d="M 38 80 Q 14 60 18 28 Q 34 44 42 68 Z" fill="#3A9030"/>
+  <path d="M 90 80 Q 114 60 110 28 Q 94 44 86 68 Z" fill="#3A9030"/>
+  <!-- Corn cob body -->
+  <ellipse cx="64" cy="72" rx="28" ry="48" fill="#E0C020"/>
+  <!-- Kernel rows (distinctive corn pattern) -->
+  <ellipse cx="50" cy="44" rx="5" ry="4" fill="#C8A010"/>
+  <ellipse cx="64" cy="40" rx="5" ry="4" fill="#C8A010"/>
+  <ellipse cx="78" cy="44" rx="5" ry="4" fill="#C8A010"/>
+  <ellipse cx="46" cy="56" rx="5" ry="4" fill="#F0D830"/>
+  <ellipse cx="60" cy="52" rx="5" ry="4" fill="#F0D830"/>
+  <ellipse cx="74" cy="52" rx="5" ry="4" fill="#F0D830"/>
+  <ellipse cx="82" cy="56" rx="5" ry="4" fill="#C8A010"/>
+  <ellipse cx="44" cy="68" rx="5" ry="4" fill="#C8A010"/>
+  <ellipse cx="58" cy="64" rx="5" ry="4" fill="#F0D830"/>
+  <ellipse cx="72" cy="64" rx="5" ry="4" fill="#F0D830"/>
+  <ellipse cx="84" cy="68" rx="5" ry="4" fill="#C8A010"/>
+  <ellipse cx="46" cy="80" rx="5" ry="4" fill="#E0C020"/>
+  <ellipse cx="60" cy="76" rx="5" ry="4" fill="#E0C020"/>
+  <ellipse cx="74" cy="76" rx="5" ry="4" fill="#E0C020"/>
+  <ellipse cx="82" cy="80" rx="5" ry="4" fill="#E0C020"/>
+  <ellipse cx="50" cy="92" rx="5" ry="4" fill="#C8A010"/>
+  <ellipse cx="64" cy="90" rx="5" ry="4" fill="#C8A010"/>
+  <ellipse cx="78" cy="92" rx="5" ry="4" fill="#C8A010"/>
+  <!-- Silk top -->
+  <path d="M 54 26 Q 58 10 60 8" stroke="#C8A840" stroke-width="3" fill="none"/>
+  <path d="M 60 24 Q 62 8 64 6" stroke="#D8B840" stroke-width="3" fill="none"/>
+  <path d="M 66 24 Q 68 8 70 8" stroke="#C8A840" stroke-width="3" fill="none"/>
+  <path d="M 72 26 Q 76 12 78 10" stroke="#C8A840" stroke-width="3" fill="none"/>
+</svg>

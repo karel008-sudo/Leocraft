@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Big crescent moon shape - the iconic banana silhouette -->
+  <path d="M 24 96 Q 10 50 42 18 Q 62 8 82 14 Q 96 20 106 34 Q 90 24 72 28 Q 44 38 38 70 Q 34 88 44 108 Q 34 108 24 96 Z" fill="#E8C020"/>
+  <!-- Main body fill -->
+  <path d="M 42 18 Q 62 8 84 16 Q 104 26 112 46 Q 118 64 106 80 Q 94 96 76 104 Q 58 112 44 108 Q 34 88 38 70 Q 44 38 42 18 Z" fill="#F0D020"/>
+  <!-- Highlight stripe along top edge -->
+  <path d="M 48 22 Q 68 12 88 20 Q 108 32 112 50" stroke="#F8E840" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.60"/>
+  <!-- Tip ends -->
+  <ellipse cx="40" cy="20" rx="8" ry="6" fill="#C89A00" transform="rotate(-40,40,20)"/>
+  <ellipse cx="78" cy="108" rx="8" ry="6" fill="#C89A00" transform="rotate(30,78,108)"/>
+</svg>

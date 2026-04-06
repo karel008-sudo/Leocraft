@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Round black ears -->
+  <circle cx="22" cy="22" r="20" fill="#222222"/>
+  <circle cx="106" cy="22" r="20" fill="#222222"/>
+  <!-- White round head -->
+  <circle cx="64" cy="66" r="56" fill="#FFFFFF"/>
+  <!-- Big BLACK EYE PATCHES (most distinctive panda feature) -->
+  <ellipse cx="44" cy="54" rx="18" ry="16" fill="#222222"/>
+  <ellipse cx="84" cy="54" rx="18" ry="16" fill="#222222"/>
+  <!-- White eyes on black patches -->
+  <circle cx="44" cy="52" r="10" fill="white"/>
+  <circle cx="84" cy="52" r="10" fill="white"/>
+  <circle cx="45" cy="53" r="6" fill="#222"/>
+  <circle cx="85" cy="53" r="6" fill="#222"/>
+  <circle cx="47" cy="51" r="2.5" fill="white"/>
+  <circle cx="87" cy="51" r="2.5" fill="white"/>
+  <!-- Muzzle -->
+  <ellipse cx="64" cy="80" rx="20" ry="14" fill="#F5F5F5"/>
+  <!-- Nose -->
+  <ellipse cx="64" cy="74" rx="7" ry="5" fill="#333"/>
+  <!-- Mouth -->
+  <path d="M 52 83 Q 64 94 76 83" stroke="#555" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Cheeks (pink) -->
+  <circle cx="34" cy="74" r="10" fill="#FFAAAA" opacity="0.50"/>
+  <circle cx="94" cy="74" r="10" fill="#FFAAAA" opacity="0.50"/>
+</svg>

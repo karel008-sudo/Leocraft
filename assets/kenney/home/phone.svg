@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Phone body -->
+  <rect x="22" y="8" width="84" height="112" rx="14" fill="#1A1A2A"/>
+  <!-- Screen area -->
+  <rect x="28" y="18" width="72" height="90" rx="8" fill="#2A3A5A"/>
+  <!-- Home screen content (colorful) -->
+  <rect x="32" y="24" width="26" height="20" rx="4" fill="#E07820" opacity="0.90"/>
+  <rect x="70" y="24" width="26" height="20" rx="4" fill="#20A040" opacity="0.90"/>
+  <rect x="32" y="52" width="26" height="20" rx="4" fill="#2080E0" opacity="0.90"/>
+  <rect x="70" y="52" width="26" height="20" rx="4" fill="#C020C0" opacity="0.90"/>
+  <!-- Big text area suggestion -->
+  <rect x="32" y="80" width="64" height="6" rx="3" fill="#FFFFFF" opacity="0.25"/>
+  <rect x="32" y="90" width="48" height="6" rx="3" fill="#FFFFFF" opacity="0.15"/>
+  <!-- Home indicator bar -->
+  <rect x="46" y="100" width="36" height="5" rx="2.5" fill="#FFFFFF" opacity="0.50"/>
+  <!-- Front camera -->
+  <circle cx="64" cy="13" r="4" fill="#333"/>
+  <!-- Side button -->
+  <rect x="18" y="44" width="5" height="22" rx="2.5" fill="#333"/>
+</svg>

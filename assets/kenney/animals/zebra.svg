@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- White base head/body -->
+  <ellipse cx="64" cy="64" rx="50" ry="56" fill="#FFFFFF"/>
+  <!-- BOLD BLACK STRIPES (key identifier) -->
+  <path d="M 20 40 Q 64 36 108 40 L 108 52 Q 64 48 20 52 Z" fill="#222222"/>
+  <path d="M 18 60 Q 64 55 110 60 L 110 72 Q 64 67 18 72 Z" fill="#222222"/>
+  <path d="M 20 80 Q 64 75 108 80 L 108 90 Q 64 85 20 90 Z" fill="#222222"/>
+  <path d="M 26 100 Q 64 96 102 100 L 102 110 Q 64 106 26 110 Z" fill="#222222"/>
+  <!-- Stripe on top -->
+  <path d="M 30 22 Q 64 18 98 22 L 98 30 Q 64 26 30 30 Z" fill="#222222"/>
+  <!-- Face area (white, clear) -->
+  <ellipse cx="64" cy="36" rx="28" ry="24" fill="#FFFFFF"/>
+  <!-- Mane / top stripe accent -->
+  <path d="M 52 12 Q 64 8 76 12 L 76 26 Q 64 22 52 26 Z" fill="#222222"/>
+  <!-- Eyes -->
+  <circle cx="50" cy="32" r="8" fill="white"/>
+  <circle cx="78" cy="32" r="8" fill="white"/>
+  <circle cx="51" cy="33" r="5" fill="#333"/>
+  <circle cx="79" cy="33" r="5" fill="#333"/>
+  <circle cx="52" cy="31" r="2" fill="white"/>
+  <circle cx="80" cy="31" r="2" fill="white"/>
+  <!-- Snout -->
+  <ellipse cx="64" cy="50" rx="14" ry="9" fill="#F0E8E0"/>
+  <circle cx="59" cy="51" r="3" fill="#888"/>
+  <circle cx="69" cy="51" r="3" fill="#888"/>
+  <!-- Smile -->
+  <path d="M 54 56 Q 64 63 74 56" stroke="#888" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>

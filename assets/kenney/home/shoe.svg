@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Thick sole -->
+  <rect x="10" y="90" width="108" height="18" rx="9" fill="#222222"/>
+  <!-- Shoe upper body -->
+  <path d="M 18 90 Q 16 58 36 44 Q 54 34 76 38 Q 102 42 116 60 Q 120 76 116 90 Z" fill="#3A7EC8"/>
+  <!-- Toe cap (white) -->
+  <ellipse cx="110" cy="78" rx="14" ry="12" fill="#FFFFFF" opacity="0.90"/>
+  <!-- Tongue -->
+  <rect x="44" y="38" width="28" height="24" rx="6" fill="#2A6AB8"/>
+  <!-- Laces (bold, simple) -->
+  <line x1="40" y1="52" x2="82" y2="52" stroke="#FFFFFF" stroke-width="3.5" stroke-dasharray="10,6"/>
+  <line x1="40" y1="61" x2="82" y2="61" stroke="#FFFFFF" stroke-width="3.5" stroke-dasharray="10,6"/>
+  <!-- Heel tab -->
+  <rect x="14" y="58" width="8" height="28" rx="4" fill="#2A6AB8"/>
+</svg>

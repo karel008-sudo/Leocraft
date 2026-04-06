@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Long neck (most distinctive feature) -->
+  <rect x="44" y="30" width="40" height="72" rx="20" fill="#F0C040"/>
+  <!-- Brown spots on neck -->
+  <ellipse cx="54" cy="48" rx="7" ry="9" fill="#C88820"/>
+  <ellipse cx="72" cy="56" rx="6" ry="8" fill="#C88820"/>
+  <ellipse cx="56" cy="72" rx="6" ry="7" fill="#C88820"/>
+  <ellipse cx="74" cy="82" rx="5" ry="7" fill="#C88820"/>
+  <!-- Head (small, at top) -->
+  <ellipse cx="64" cy="24" rx="22" ry="20" fill="#F0C040"/>
+  <ellipse cx="64" cy="26" rx="16" ry="14" fill="#F8D060"/>
+  <!-- Ossicones (horns) -->
+  <rect x="50" y="6" width="6" height="16" rx="3" fill="#C88820"/>
+  <circle cx="53" cy="6" r="4" fill="#8B5A00"/>
+  <rect x="72" y="6" width="6" height="16" rx="3" fill="#C88820"/>
+  <circle cx="75" cy="6" r="4" fill="#8B5A00"/>
+  <!-- Eyes -->
+  <circle cx="54" cy="20" r="6" fill="white"/>
+  <circle cx="74" cy="20" r="6" fill="white"/>
+  <circle cx="55" cy="21" r="3.5" fill="#222"/>
+  <circle cx="75" cy="21" r="3.5" fill="#222"/>
+  <circle cx="56" cy="19.5" r="1.5" fill="white"/>
+  <circle cx="76" cy="19.5" r="1.5" fill="white"/>
+  <!-- Snout -->
+  <ellipse cx="64" cy="34" rx="10" ry="7" fill="#E8B030"/>
+  <circle cx="60" cy="34" r="2.5" fill="#C88820"/>
+  <circle cx="68" cy="34" r="2.5" fill="#C88820"/>
+  <!-- Smile -->
+  <path d="M 57 38 Q 64 44 71 38" stroke="#C88820" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Body (peek at bottom) -->
+  <ellipse cx="64" cy="114" rx="36" ry="22" fill="#F0C040"/>
+  <ellipse cx="54" cy="110" rx="8" ry="10" fill="#C88820"/>
+  <ellipse cx="74" cy="105" rx="7" ry="9" fill="#C88820"/>
+</svg>

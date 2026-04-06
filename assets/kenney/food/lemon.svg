@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Main lemon body (pointed oval) -->
+  <ellipse cx="64" cy="64" rx="52" ry="40" fill="#E8DC20"/>
+  <!-- Pointed tips (key lemon feature) -->
+  <ellipse cx="14" cy="64" rx="10" ry="8" fill="#D0C010" transform="rotate(-10,14,64)"/>
+  <ellipse cx="114" cy="64" rx="10" ry="8" fill="#D0C010" transform="rotate(10,114,64)"/>
+  <!-- Highlight -->
+  <ellipse cx="44" cy="44" rx="22" ry="14" fill="#F8F040" opacity="0.65"/>
+  <!-- Dimple/button at tip -->
+  <circle cx="14" cy="64" r="5" fill="#C0B010"/>
+  <circle cx="114" cy="64" r="5" fill="#C0B010"/>
+  <!-- Stem -->
+  <rect x="61" y="24" width="6" height="12" rx="3" fill="#5A8010"/>
+  <!-- Leaf -->
+  <path d="M 67 28 Q 84 20 86 34 Q 74 32 67 28 Z" fill="#2A8020"/>
+</svg>
